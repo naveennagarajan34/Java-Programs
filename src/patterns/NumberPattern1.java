@@ -17,9 +17,9 @@ public class NumberPattern1 {
 			for (int j = 1; j < n * 2 - jnum; j++) {
 				if (j >= num) {
 					if (i % 2 == 1)
-						System.out.printf("%d   ", val++);
+						System.out.printf("%d ", val++);
 					else
-						System.out.printf("%d   ", val--);
+						System.out.printf("%d ", val--);
 				} else {
 					System.out.print("  "
 							+ "  ");
