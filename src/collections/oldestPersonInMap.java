@@ -4,6 +4,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class oldestPersonInMap {
+	
+//	Most common Map methods are below
+//		size() → total entries
+//		containsKey() / containsValue() → checking presence
+//		getOrDefault() → safe lookup with default
+//		remove() → delete an entry
+//		keySet() → loop through keys
+//		entrySet() → loop through key + value together
+//		values() → get only values
+//		clear() / isEmpty() → clean and check emptiness
 
 	public static void main(String[] args) {
 		Map<String, Integer> employees = new HashMap<>();
