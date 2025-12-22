@@ -2,9 +2,10 @@ package collections;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class oldestPersonInMap {
-	
+
 //	Most common Map methods are below
 //		size() → total entries
 //		containsKey() / containsValue() → checking presence
@@ -28,15 +29,20 @@ public class oldestPersonInMap {
 		employees.put("Vikram", 36);
 		employees.put("Anita", 30);
 
+		Set<String> keys = employees.keySet();
+		for (String key : keys) {
+			System.out.println("Employee Name: " + key + ", Age: " + employees.get(key));
+		}
+
 		int older = 0;
 		String olderPerson = "";
-		if(employees.containsKey("Naveen")) {
+		if (employees.containsKey("Naveen")) {
 			System.out.println("Yes we have the employee Naveen in our list");
 		}
-		if(employees.containsValue(26)) {
+		if (employees.containsValue(26)) {
 			System.out.println("Yes we have a employee with age 26");
 		}
-		if(employees.containsKey("Meena")) {
+		if (employees.containsKey("Meena")) {
 			employees.remove("Meena");
 			System.out.println("Employee Meena removed from the list");
 		}
@@ -47,5 +53,13 @@ public class oldestPersonInMap {
 			}
 		}
 		System.out.println("Oldest Employee in the Employee list is --> " + olderPerson);
+
+		int sum = 0;
+		for (Map.Entry<String, Integer> entry : employees.entrySet()) {
+			sum += entry.getValue();
+		}
+		float average = sum / employees.size();
+		System.out.println("Average age of Employees in the Employee list is --> " + average);
+
 	}
 }
