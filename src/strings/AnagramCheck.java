@@ -2,23 +2,17 @@ package strings;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class AnagramCheck {
 	public static void main(String args[]) {
 		String str = "silents";
 		String str1 = "listens";
-		Map<Character, Integer> map1 = new HashMap<>();
-		Map<Character, Integer> map2 = new HashMap<>();
-		for (char ch : str.toCharArray()) {
-			map1.put(ch, map1.getOrDefault(ch, 0) + 1);
-		}
-		for (char ch : str1.toCharArray()) {
-			map2.put(ch, map2.getOrDefault(ch, 0) + 1);
-		}
-		System.out.println(map1);
-		System.out.println(map2);
 		anagramCheckUsingArray(str, str1);
+
+		removeDuplicateCharacters();
 	}
 
 	public static void anagramCheckUsingArray(String str, String str1) {
@@ -42,5 +36,25 @@ public class AnagramCheck {
 				System.out.println("Not Anagram");
 			}
 		}
+	}
+
+	public static void countOccurencesOfCharacter(String str) {
+		Map<Character, Integer> map = new HashMap<Character, Integer>();
+		for (char ch : str.toCharArray()) {
+			map.put(ch, map.getOrDefault(ch, 0) + 1);
+		}
+	}
+
+	public static void removeDuplicateCharacters() {
+		String str = "naveen";
+		String removedDuplicate = "";
+		Set<Character> set = new LinkedHashSet<Character>();
+		for (char ch : str.toCharArray()) {
+			if (!set.contains(ch)) {
+				set.add(ch);
+				removedDuplicate += ch;
+			}
+		}
+		System.out.println(removedDuplicate);
 	}
 }
